@@ -5,7 +5,12 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {}
+    this.state = {
+      counter: 1,
+      playerName: 'Virat Kohli'
+    }
+    this.handleFavoritePlayerClick = this.handleFavoritePlayerClick.bind(this)
+    this.incrementMe = this.incrementMe.bind(this)
   }
 
   showMe(name) {
@@ -15,6 +20,19 @@ class App extends Component {
         <h3>By, {name}</h3>
       </div>
     )
+  }
+  handleFavoritePlayerClick() {
+    this.setState({
+      playerName: 'Rahul Dravid'
+    })
+  }
+  incrementMe() {
+    this.setState((oldState) => {
+      console.log(oldState)
+      return {
+        counter: oldState.counter + 1
+      }
+    })
   }
 
   render() {
@@ -37,6 +55,32 @@ class App extends Component {
     ]
     return (
       <div>
+        <h1>State in ReactJS</h1>
+        <h1>Counter value is now, {this.state.counter}</h1>
+        <h1>My favorite cricket player is, {this.state.playerName}</h1>{' '}
+        <button
+          style={{
+            fontSize: '1.5rem',
+            color: 'white',
+            background: 'purple',
+            padding: '.5em'
+          }}
+          onClick={this.handleFavoritePlayerClick}
+        >
+          Change My Favorite Cricket Player
+        </button>
+        <br />
+        <button
+          style={{
+            fontSize: '1.5rem',
+            color: 'white',
+            background: 'purple',
+            padding: '.5em'
+          }}
+          onClick={this.incrementMe}
+        >
+          Increment Me!
+        </button>
         <h1>Hello {name}</h1>
         {this.showMe('Jayaram')}
         {isActive && <h3>I am an active user, {activeUser}</h3>}

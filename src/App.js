@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ShowUsers from './ShowUsers'
+import MakingHTTPCalls from './components/MakingHTTPCalls'
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends Component {
     ]
     return (
       <div>
+        <MakingHTTPCalls />
         <h1>State in ReactJS</h1>
         <h1>Counter value is now, {this.state.counter}</h1>
         <h1>My favorite cricket player is, {this.state.playerName}</h1>{' '}
@@ -86,7 +88,7 @@ class App extends Component {
         {isActive && <h3>I am an active user, {activeUser}</h3>}
         <ShowUsers
           userslist={users}
-          str='String fkjkjds'
+          str="String fkjkjds"
           num={5}
           isActive={false}
         />

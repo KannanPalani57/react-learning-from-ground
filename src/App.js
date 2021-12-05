@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ShowUsers from './ShowUsers'
 import MakingHTTPCalls from './components/MakingHTTPCalls'
+import UseStateHook from './components/UseStateHook'
 
 class App extends Component {
   constructor(props) {
@@ -56,7 +57,8 @@ class App extends Component {
     ]
     return (
       <div>
-        <MakingHTTPCalls />
+        <UseStateHook favoriteName='Kane Williamson' />
+        {/* <MakingHTTPCalls />
         <h1>State in ReactJS</h1>
         <h1>Counter value is now, {this.state.counter}</h1>
         <h1>My favorite cricket player is, {this.state.playerName}</h1>{' '}
@@ -91,7 +93,7 @@ class App extends Component {
           str="String fkjkjds"
           num={5}
           isActive={false}
-        />
+        /> */}
       </div>
     )
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ShowUsers from './ShowUsers'
 import MakingHTTPCalls from './components/MakingHTTPCalls'
 import UseStateHook from './components/UseStateHook'
+import UseEffectHook from './components/UseEffectHook'
 
 class App extends Component {
   constructor(props) {
@@ -57,7 +58,8 @@ class App extends Component {
     ]
     return (
       <div>
-        <UseStateHook favoriteName='Kane Williamson' />
+        {/* <UseStateHook favoriteName='Kane Williamson' /> */}
+        <UseEffectHook />
         {/* <MakingHTTPCalls />
         <h1>State in ReactJS</h1>
         <h1>Counter value is now, {this.state.counter}</h1>
